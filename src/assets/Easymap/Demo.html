@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Easymap範例</title>
+    <!--
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    -->
+    <script src="easymap.js"></script>
+    <style>
+        html, body {
+            width: 100vw;
+            height: 100vh;
+            margin: 0px;
+            padding: 0px;
+            overflow: hidden;
+        }
+
+        #map {
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script>
+        var map = null;
+        map = new Easymap('map');
+
+        //圖台移到逢甲大學GIS地理資訊中心
+        var xy = new dgXY(120.649919, 24.178295);
+        map.panToXYZ(xy, 17, 800); //移到第 17 階，800ms
+
+        //放一個 GIS Icon
+        var iconURL = "https://easymap.gis.tw/easymap/images/gisfcu.jpg";
+        var icon = new dgIcon(iconURL, 32, 32);
+        var marker = new dgMarker(xy, icon, false);
+        marker.setContent("<h2>逢甲GIS 地理資訊中心</h2>");
+        map.addItem(marker);
+    </script>
+</body>
+</html>

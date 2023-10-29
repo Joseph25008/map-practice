@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Easymap範例</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="../easymap.js"></script>
+
+<style>
+#map {
+            width: 100vw;
+            height: 100vh;
+        }
+</style>
+<script>
+var ezmapplus = {};
+ezmapplus.toolbar = {};
+ezmapplus.toolbar.use_rmap_layer = false;
+ezmapplus.toolbar.tools = ['identify172','polyline', 'polygon', 'circle','print7'];
+ezmapplus.toolbar.position = [20, 10];
+ezmapplus.toolbar.positionOffset = 30;
+</script>
+<script src="../easymap_plus/toolbar.js"></script>
+<script>
+var map2 = null;
+$(document).ready(function () {
+   map2 = new Easymap('map');
+   ezmapplus.toolbar.set_map(map2);
+   ezmapplus.toolbar.start();
+});
+</script>
+
+</head>
+<body>
+<div id="map"></div>
+
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+由於 cesium、openlayer 屬於第三方套件
+
+在掃描之前，請先將以下資料排除
+
+6\MM\OpenLayers*.*
+7\Assets
+7\ThirdParty
+7\Widgets
+7\Workers
+7\Cesium.js
+7\easymap.js
